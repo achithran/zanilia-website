@@ -1,0 +1,19 @@
+# robots.txt for Zanilia Beauty Parlor & Makeup Studio
+# Author: Nancy Sethumadhavan
+# Purpose: Allow full crawling and SEO visibility
+
+User-agent: *
+Allow: /
+
+# Sitemap to help search engines discover all pages
+Sitemap: https://www.zaniliabeautyparlor.in/sitemap.xml
+
+# Block non-essential or duplicate paths (if you add them later)
+Disallow: /tmp/
+Disallow: /test/
+Disallow: /private/
+
+# Optional crawl delay (for smaller hosting servers)
+# Crawl-delay: 5
+
+# End of file
