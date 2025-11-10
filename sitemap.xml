@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset 
+<urlset
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- Homepage -->
+  <!-- Home Page -->
   <url>
     <loc>https://www.zaniliabeautyparlor.in/</loc>
     <lastmod>2025-11-10</lastmod>
-    <changefreq>daily</changefreq>
+    <changefreq>weekly</changefreq>
     <priority>1.00</priority>
   </url>
 
@@ -15,7 +15,7 @@
   <url>
     <loc>https://www.zaniliabeautyparlor.in/about.html</loc>
     <lastmod>2025-11-10</lastmod>
-    <changefreq>weekly</changefreq>
+    <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
@@ -43,12 +43,12 @@
     <priority>0.80</priority>
   </url>
 
-  <!-- Blog / Featured Section (optional future expansion) -->
+  <!-- Future Blog Section (Optional for SEO growth) -->
   <url>
-    <loc>https://www.zaniliabeautyparlor.in/featured.html</loc>
+    <loc>https://www.zaniliabeautyparlor.in/blog.html</loc>
     <lastmod>2025-11-10</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.60</priority>
+    <priority>0.75</priority>
   </url>
 
 </urlset>
