@@ -1,347 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>
-Happy Homestay Perinthalmanna | Best Luxury Homestay in Malappuram Kerala
-</title>
-
-<meta name="description"
-content="Happy Homestay Perinthalmanna is one of the best luxury homestays in Malappuram Kerala offering premium rooms, family-friendly accommodation, tourist stay, workcation stay, holiday rental, free WiFi, parking, peaceful atmosphere, and authentic Kerala hospitality.">
-
-<meta name="keywords"
-content="Best Homestay in Malappuram, Luxury Homestay Perinthalmanna, Premium Stay Kerala, Budget Homestay Kerala, Family Stay Malappuram, Tourist Accommodation Kerala, Holiday Home Malappuram, Airbnb Perinthalmanna, Workcation Kerala, Couple Friendly Stay Kerala, Kerala Tourism Homestay, Best Guest House in Malappuram, Vacation Stay Kerala, Luxury Rooms Perinthalmanna, Weekend Getaway Kerala, Affordable Stay Kerala, Kerala Holiday Rental, Family Vacation Kerala, Best Stay Near Perinthalmanna, Nature Stay Kerala, Best Rooms in Malappuram, Luxury Vacation Kerala, Homestay with Parking Kerala, Homestay with WiFi Kerala, Safe Family Stay Kerala, Business Stay Perinthalmanna, Best Accommodation Kerala">
-
-<meta name="robots" content="index, follow">
-
-<meta property="og:title"
-content="Happy Homestay Perinthalmanna | Best Luxury Family Stay in Kerala">
-
-<meta property="og:description"
-content="Luxury and peaceful homestay in Perinthalmanna with premium rooms, free WiFi, parking, Kerala hospitality, and affordable pricing.">
-
-<meta property="og:type" content="website">
-
-<meta property="og:image"
-content="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1200&auto=format&fit=crop">
-
-<meta property="og:locale" content="en_IN">
-
-<link rel="canonical" href="https://yourwebsite.com">
-
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-scroll-behavior:smooth;
-}
-
-body{
-font-family:'Segoe UI',sans-serif;
-background:#f8fafc;
-color:#1e293b;
-line-height:1.8;
-overflow-x:hidden;
-}
-
-/* HERO */
-
-.hero{
-height:100vh;
-background:
-linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
-url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1600&auto=format&fit=crop');
-
-background-size:cover;
-background-position:center;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:20px;
-color:white;
-}
-
-.hero-content{
-max-width:1000px;
-animation:fadeIn 1.2s ease;
-}
-
-.hero h1{
-font-size:72px;
-font-weight:700;
-margin-bottom:20px;
-text-shadow:0 8px 20px rgba(0,0,0,0.4);
-}
-
-.hero p{
-font-size:26px;
-margin-bottom:35px;
-line-height:1.8;
-}
-
-.btn{
-display:inline-block;
-padding:16px 38px;
-background:#0f766e;
-color:white;
-text-decoration:none;
-border-radius:50px;
-font-size:18px;
-transition:0.4s;
-box-shadow:0 10px 30px rgba(15,118,110,0.3);
-}
-
-.btn:hover{
-background:#115e59;
-transform:translateY(-4px);
-}
-
-/* GENERAL */
-
-section{
-padding:100px 20px;
-}
-
-.container{
-max-width:1300px;
-margin:auto;
-}
-
-.section-title{
-text-align:center;
-margin-bottom:60px;
-}
-
-.section-title h2{
-font-size:48px;
-color:#0f766e;
-margin-bottom:18px;
-}
-
-.section-title p{
-font-size:20px;
-color:#475569;
-max-width:850px;
-margin:auto;
-}
-
-/* FEATURES */
-
-.features{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:30px;
-}
-
-.feature-box{
-background:white;
-padding:40px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.08);
-transition:0.4s;
-}
-
-.feature-box:hover{
-transform:translateY(-8px);
-}
-
-.feature-box h3{
-font-size:28px;
-color:#0f766e;
-margin-bottom:18px;
-}
-
-.feature-box p{
-font-size:17px;
-color:#475569;
-}
-
-/* ABOUT */
-
-.about{
-background:#ecfeff;
-}
-
-.about-content{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:50px;
-align-items:center;
-}
-
-.about img{
-width:100%;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,0.1);
-}
-
-.about-text h2{
-font-size:46px;
-color:#0f766e;
-margin-bottom:25px;
-}
-
-.about-text p{
-font-size:18px;
-margin-bottom:22px;
-color:#334155;
-}
-
-/* GALLERY */
-
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:20px;
-}
-
-.gallery img{
-width:100%;
-height:280px;
-object-fit:cover;
-border-radius:20px;
-transition:0.4s;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
-}
-
-.gallery img:hover{
-transform:scale(1.03);
-}
-
-/* REVIEW */
-
-.reviews{
-background:#f1f5f9;
-}
-
-.review-card{
-background:white;
-padding:45px;
-border-radius:20px;
-max-width:950px;
-margin:auto;
-box-shadow:0 10px 30px rgba(0,0,0,0.08);
-text-align:center;
-}
-
-.review-card p{
-font-size:21px;
-line-height:2;
-color:#334155;
-}
-
-.review-card strong{
-display:block;
-margin-top:25px;
-font-size:18px;
-color:#0f766e;
-}
-
-/* FAQ */
-
-.faq{
-background:white;
-}
-
-.faq-item{
-background:#f8fafc;
-padding:30px;
-margin-bottom:20px;
-border-radius:16px;
-box-shadow:0 5px 15px rgba(0,0,0,0.05);
-}
-
-.faq-item h3{
-color:#0f766e;
-margin-bottom:15px;
-font-size:24px;
-}
-
-/* CONTACT */
-
-.contact{
-background:
-linear-gradient(rgba(2,6,23,0.9),rgba(2,6,23,0.9)),
-url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1600&auto=format&fit=crop');
-
-background-size:cover;
-background-position:center;
-color:white;
-text-align:center;
-}
-
-.contact h2{
-font-size:52px;
-margin-bottom:25px;
-}
-
-.contact p{
-font-size:22px;
-margin:18px 0;
-line-height:1.9;
-}
-
-/* FOOTER */
-
-footer{
-background:#020617;
-color:#cbd5e1;
-padding:35px 20px;
-text-align:center;
-font-size:15px;
-}
-
-/* ANIMATION */
-
-@keyframes fadeIn{
-from{
-opacity:0;
-transform:translateY(20px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-/* MOBILE */
-
-@media(max-width:900px){
-
-.hero h1{
-font-size:48px;
-}
-
-.hero p{
-font-size:20px;
-}
-
-.about-content{
-grid-template-columns:1fr;
-}
-
-.section-title h2{
-font-size:38px;
-}
-
-.contact h2{
-font-size:38px;
-}
-
-.contact p{
-font-size:18px;
-}
-
-}
-
-</style>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>
+    Happy Homestay Perinthalmanna | Best Luxury Homestay in Malappuram Kerala
+  </title>
+
+  <!-- SEO META -->
+  <meta name="description"
+        content="Happy Homestay Perinthalmanna is one of the best luxury homestays in Malappuram Kerala offering premium rooms, peaceful family stay, budget accommodation, tourist stay, workcation, free WiFi, and authentic Kerala hospitality.">
+
+  <meta name="keywords"
+        content="Best Homestay in Malappuram, Luxury Homestay Perinthalmanna, Premium Stay Kerala, Budget Homestay Kerala, Family Stay Malappuram, Best Stay in Perinthalmanna, Tourist Accommodation Kerala, Airbnb Perinthalmanna, Holiday Home Malappuram, Couple Friendly Homestay Kerala, Weekend Getaway Kerala, Workcation Kerala, Vacation Stay Kerala, Guest House Perinthalmanna, Luxury Rooms Malappuram, Best Rooms in Perinthalmanna, Affordable Stay Kerala, Kerala Tourism Stay, Nature Stay Kerala, Homestay Near Hospitals Perinthalmanna, Best Family Homestay Kerala, Romantic Stay Kerala, Safe Stay for Families Kerala, Luxury Vacation Kerala, Homestay with WiFi Kerala, Best Guest House Malappuram">
+
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:title"
+        content="Happy Homestay Perinthalmanna | Luxury Family Stay in Kerala">
+
+  <meta property="og:description"
+        content="Experience peaceful luxury stay in Perinthalmanna with premium rooms, Kerala hospitality, WiFi, parking, and family-friendly atmosphere.">
+
+  <meta property="og:type" content="website">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family: 'Segoe UI', sans-serif;
+      background:#f8fafc;
+      color:#222;
+      overflow-x:hidden;
+    }
+
+    /* HERO */
+
+    .hero{
+      height:100vh;
+      background:
+      linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+      url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1600&auto=format&fit=crop');
+
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:20px;
+      color:white;
+    }
+
+    .hero-content{
+      max-width:950px;
+      animation:fadeIn 1.2s ease;
+    }
+
+    .hero h1{
+      font-size:68px;
+      margin-bottom:20px;
+      font-weight:700;
+      text-shadow:0 5px 15px rgba(0,0,0,0.4);
+    }
+
+    .hero p{
+      font-size:24px;
+      line-height:1.7;
+      margin-bottom:35px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:16px 34px;
+      background:#0f766e;
+      color:white;
+      text-decoration:none;
+      border-radius:50px;
+      font-size:18px;
+      transition:0.3s;
+      box-shadow:0 10px 25px rgba(15,118,110,0.3);
+    }
+
+    .btn:hover{
+      transform:translateY(-3px);
+      background:#115e59;
+    }
+
+    /* SECTION */
+
+    section{
+      padding:90px 20px;
+    }
+
+    .container{
+      max-width:1250px;
+      margin:auto;
+    }
+
+    .section-title{
+      text-align:center;
+      margin-bottom:60px;
+    }
+
+    .section-title h2{
+      font-size:44px;
+      color:#0f766e;
+      margin-bottom:15px;
+    }
+
+    .section-title p{
+      color:#555;
+      font-size:18px;
+    }
+
+    /* FEATURES */
+
+    .features{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:30px;
+    }
+
+    .feature-card{
+      background:white;
+      border-radius:20px;
+      padding:35px;
+      transition:0.4s;
+      box-shadow:0 8px 30px rgba(0,0,0,0.08);
+    }
+
+    .feature-card:hover{
+      transform:translateY(-8px);
+    }
+
+    .feature-card h3{
+      color:#0f766e;
+      margin-bottom:15px;
+      font-size:24px;
+    }
+
+    .feature-card p{
+      color:#555;
+      line-height:1.8;
+    }
+
+    /* GALLERY */
+
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:20px;
+    }
+
+    .gallery img{
+      width:100%;
+      height:260px;
+      object-fit:cover;
+      border-radius:18px;
+      transition:0.4s;
+      box-shadow:0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .gallery img:hover{
+      transform:scale(1.03);
+    }
+
+    /* REVIEW */
+
+    .reviews{
+      background:#ecfeff;
+    }
+
+    .review-box{
+      background:white;
+      padding:40px;
+      border-radius:20px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.08);
+      max-width:900px;
+      margin:auto;
+      text-align:center;
+    }
+
+    .review-box p{
+      font-size:20px;
+      line-height:1.9;
+      color:#444;
+    }
+
+    .review-box strong{
+      display:block;
+      margin-top:20px;
+      color:#0f766e;
+      font-size:18px;
+    }
+
+    /* CONTACT */
+
+    .contact{
+      background:
+      linear-gradient(rgba(2,6,23,0.9), rgba(2,6,23,0.9)),
+      url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1600&auto=format&fit=crop');
+
+      background-size:cover;
+      background-position:center;
+      color:white;
+      text-align:center;
+    }
+
+    .contact h2{
+      font-size:46px;
+      margin-bottom:25px;
+    }
+
+    .contact p{
+      font-size:22px;
+      margin:15px 0;
+      line-height:1.8;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#020617;
+      color:#cbd5e1;
+      text-align:center;
+      padding:30px 20px;
+      font-size:15px;
+    }
+
+    /* ANIMATION */
+
+    @keyframes fadeIn{
+      from{
+        opacity:0;
+        transform:translateY(20px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    /* MOBILE */
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:42px;
+      }
+
+      .hero p{
+        font-size:18px;
+      }
+
+      .section-title h2{
+        font-size:34px;
+      }
+
+      .contact h2{
+        font-size:34px;
+      }
+
+      .contact p{
+        font-size:18px;
+      }
+
+    }
+
+  </style>
 </head>
 
 <body>
@@ -350,24 +284,21 @@ font-size:18px;
 
 <header class="hero">
 
-<div class="hero-content">
+  <div class="hero-content">
 
-<h1>
-Happy Homestay Perinthalmanna
-</h1>
+    <h1>Happy Homestay Perinthalmanna</h1>
 
-<p>
-Experience the Best Luxury Homestay in Malappuram Kerala with
-Premium Rooms, Peaceful Atmosphere, Kerala Hospitality,
-Family-Friendly Stay, Tourist Accommodation,
-Weekend Getaway & Affordable Luxury Vacation
-</p>
+    <p>
+      Luxury Homestay in Malappuram Kerala for Family Stay,
+      Tourist Vacation, Weekend Getaway, Couple Stay,
+      Workcation & Peaceful Holiday Experience
+    </p>
 
-<a href="#contact" class="btn">
-Book Your Stay Now
-</a>
+    <a href="#contact" class="btn">
+      Book Your Stay
+    </a>
 
-</div>
+  </div>
 
 </header>
 
@@ -375,138 +306,62 @@ Book Your Stay Now
 
 <section>
 
-<div class="container">
+  <div class="container">
 
-<div class="section-title">
+    <div class="section-title">
 
-<h2>
-Why Choose Happy Homestay in Perinthalmanna?
-</h2>
+      <h2>Why Guests Love Happy Homestay</h2>
 
-<p>
-Happy Homestay is one of the most trusted and highly rated
-homestays in Malappuram offering comfortable rooms,
-modern amenities, peaceful surroundings,
-and authentic Kerala hospitality.
-</p>
+      <p>
+        One of the best-rated homestays in Perinthalmanna with
+        premium comfort, Kerala hospitality & peaceful atmosphere.
+      </p>
 
-</div>
+    </div>
 
-<div class="features">
+    <div class="features">
 
-<div class="feature-box">
+      <div class="feature-card">
+        <h3>Luxury Rooms</h3>
 
-<h3>
-Luxury Rooms
-</h3>
+        <p>
+          Spacious AC rooms with smart TV, free WiFi,
+          modern interiors, comfortable beds,
+          and hygienic bathrooms.
+        </p>
+      </div>
 
-<p>
-Enjoy spacious and beautifully designed rooms with
-air conditioning, smart TV, free WiFi,
-comfortable bedding, attached bathrooms,
-and premium interiors for a relaxing stay experience.
-</p>
+      <div class="feature-card">
+        <h3>Family Friendly Stay</h3>
 
-</div>
+        <p>
+          Safe and peaceful environment perfect for families,
+          couples, solo travelers, tourists, and business guests.
+        </p>
+      </div>
 
-<div class="feature-box">
+      <div class="feature-card">
+        <h3>Perfect Kerala Vacation</h3>
 
-<h3>
-Family Friendly Stay
-</h3>
+        <p>
+          Experience authentic Kerala hospitality,
+          peaceful greenery, fresh air,
+          and relaxing village atmosphere.
+        </p>
+      </div>
 
-<p>
-Perfect homestay for families, couples,
-solo travelers, tourists, and business travelers
-looking for a safe and peaceful accommodation in Kerala.
-</p>
+      <div class="feature-card">
+        <h3>Affordable Luxury</h3>
 
-</div>
+        <p>
+          Premium homestay experience in Malappuram
+          at budget-friendly pricing with excellent service.
+        </p>
+      </div>
 
-<div class="feature-box">
+    </div>
 
-<h3>
-Affordable Luxury
-</h3>
-
-<p>
-Get premium comfort and luxury stay experience
-at affordable pricing in Perinthalmanna,
-making it ideal for budget-conscious travelers.
-</p>
-
-</div>
-
-<div class="feature-box">
-
-<h3>
-Perfect Tourist Location
-</h3>
-
-<p>
-Located in beautiful Perinthalmanna, Malappuram,
-our homestay provides easy access to hospitals,
-shopping areas, restaurants,
-tourist attractions, and transportation facilities.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- ABOUT -->
-
-<section class="about">
-
-<div class="container">
-
-<div class="about-content">
-
-<div>
-
-<img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1200&auto=format&fit=crop">
-
-</div>
-
-<div class="about-text">
-
-<h2>
-Best Homestay Experience in Malappuram
-</h2>
-
-<p>
-Happy Homestay Perinthalmanna is designed for guests who
-want a peaceful and luxurious stay experience in Kerala.
-Our property combines modern comfort with traditional Kerala hospitality,
-creating the perfect atmosphere for relaxation and memorable stays.
-</p>
-
-<p>
-Whether you are visiting Malappuram for tourism,
-medical treatment, business meetings,
-family vacation, workcation,
-or weekend relaxation,
-Happy Homestay offers a premium accommodation experience
-with excellent service and affordable pricing.
-</p>
-
-<p>
-Guests love our clean rooms, friendly environment,
-beautiful interiors, peaceful atmosphere,
-and convenient location in Perinthalmanna.
-We focus on providing the best customer satisfaction
-for every traveler visiting Kerala.
-</p>
-
-</div>
-
-</div>
-
-</div>
+  </div>
 
 </section>
 
@@ -514,189 +369,110 @@ for every traveler visiting Kerala.
 
 <section>
 
-<div class="container">
+  <div class="container">
 
-<div class="section-title">
+    <div class="section-title">
 
-<h2>
-Luxury Stay Gallery
-</h2>
+      <h2>Beautiful Stay Experience</h2>
 
-<p>
-Discover elegant interiors, premium rooms,
-and peaceful surroundings at Happy Homestay.
-</p>
+      <p>
+        Enjoy elegant interiors, peaceful surroundings,
+        and luxury comfort in Perinthalmanna.
+      </p>
 
-</div>
+    </div>
 
-<div class="gallery">
+    <div class="gallery">
 
-<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop">
+      <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1200&auto=format&fit=crop">
 
-<img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1200&auto=format&fit=crop">
+      <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop">
 
-<img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1200&auto=format&fit=crop">
+      <img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1200&auto=format&fit=crop">
 
-</div>
+    </div>
 
-</div>
+  </div>
 
 </section>
 
-<!-- REVIEWS -->
+<!-- REVIEW -->
 
 <section class="reviews">
 
-<div class="container">
+  <div class="container">
 
-<div class="section-title">
+    <div class="section-title">
 
-<h2>
-Guest Reviews
-</h2>
+      <h2>Guest Reviews</h2>
 
-<p>
-Trusted by travelers looking for the best luxury homestay in Kerala.
-</p>
+      <p>
+        Trusted by travelers looking for the best homestay in Kerala.
+      </p>
 
-</div>
+    </div>
 
-<div class="review-card">
+    <div class="review-box">
 
-<p>
-“Amazing luxury homestay in Perinthalmanna, Malappuram
-with beautiful interiors, excellent hospitality,
-peaceful surroundings, clean rooms,
-high-speed WiFi, parking facilities,
-and authentic Kerala atmosphere.
-One of the best family-friendly stays in Kerala.
-Highly recommended for tourists and families.”
-</p>
+      <p>
+        “Amazing luxury homestay in Perinthalmanna, Malappuram
+        with beautiful interiors, excellent customer service,
+        peaceful atmosphere, clean rooms, high-speed WiFi,
+        private parking, and authentic Kerala hospitality.
+        Perfect for family stay and vacation.”
+      </p>
 
-<strong>
-- Happy Guest
-</strong>
+      <strong>- Happy Guest</strong>
 
-<br><br>
+      <br><br>
 
-<a href="https://g.page/r/"
-target="_blank"
-class="btn">
-Write a Google Review
-</a>
+      <a href="https://g.page/r/"
+         target="_blank"
+         class="btn">
+         Write a Google Review
+      </a>
 
-</div>
+    </div>
 
-</div>
-
-</section>
-
-<!-- FAQ -->
-
-<section class="faq">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>
-Frequently Asked Questions
-</h2>
-
-<p>
-Everything you need to know about Happy Homestay Perinthalmanna.
-</p>
-
-</div>
-
-<div class="faq-item">
-
-<h3>
-Is Happy Homestay suitable for families?
-</h3>
-
-<p>
-Yes. Happy Homestay is one of the best family-friendly homestays
-in Malappuram with safe surroundings,
-peaceful atmosphere,
-and comfortable rooms for families and children.
-</p>
-
-</div>
-
-<div class="faq-item">
-
-<h3>
-Do you provide WiFi and parking?
-</h3>
-
-<p>
-Yes. We provide free high-speed WiFi,
-private parking,
-comfortable rooms,
-and modern amenities for all guests.
-</p>
-
-</div>
-
-<div class="faq-item">
-
-<h3>
-Is this homestay good for tourists visiting Kerala?
-</h3>
-
-<p>
-Absolutely. Our homestay is ideal for tourists,
-couples, business travelers,
-medical visitors,
-and guests looking for a peaceful Kerala vacation experience.
-</p>
-
-</div>
-
-</div>
+  </div>
 
 </section>
 
 <!-- CONTACT -->
 
-<section class="contact" id="contact">
+<section id="contact" class="contact">
 
-<div class="container">
+  <div class="container">
 
-<h2>
-Contact Happy Homestay
-</h2>
+    <h2>Contact Happy Homestay</h2>
 
-<p>
-📍 Perinthalmanna, Malappuram, Kerala
-</p>
+    <p>
+      📍 Perinthalmanna, Malappuram, Kerala
+    </p>
 
-<p>
-📞 9961959788
-</p>
+    <p>
+      📞 9961959788
+    </p>
 
-<p>
-Best Luxury & Budget Homestay in Perinthalmanna
-for Family Vacation, Tourist Stay,
-Weekend Getaway, Couple Stay,
-Workcation & Business Travel
-</p>
+    <p>
+      Best Luxury & Budget Homestay in Malappuram
+      for Tourists, Families, Couples & Business Travelers
+    </p>
 
-<br>
+    <br>
 
-<a href="tel:9961959788" class="btn">
-Call Now
-</a>
+    <a href="tel:9961959788" class="btn">
+      Call Now
+    </a>
 
-</div>
+  </div>
 
 </section>
 
 <footer>
 
-© 2026 Happy Homestay Perinthalmanna |
-Best Luxury Homestay in Malappuram Kerala
+  © 2026 Happy Homestay Perinthalmanna |
+  Best Homestay in Malappuram Kerala
 
 </footer>
 
