@@ -1,2145 +1,704 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CodexWagon | Enterprise Web, Mobile, Cloud & AI Solutions | Premium Digital Agency</title>
-    <meta name="description" content="Premium digital transformation agency specializing in enterprise web development, mobile applications, cloud solutions, AI integration, and custom applications.">
-    <meta name="keywords" content="enterprise web development, custom mobile apps, cloud solutions, AI integration, digital transformation, premium digital agency">
-    <meta name="author" content="CodexWagon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #0A0B1E;
-            --primary-light: #1A1B3E;
-            --secondary: #FFD700;
-            --secondary-dark: #E6C300;
-            --accent: #7C3AED;
-            --accent-light: #8B5CF6;
-            --accent-glow: rgba(124, 58, 237, 0.3);
-            --dark: #0F0F1E;
-            --light: #FAFAFF;
-            --gray: #8A8AA3;
-            --light-gray: #2A2A3E;
-            --success: #00FF9D;
-            --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-            --shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-            --shadow-lg: 0 30px 90px rgba(0, 0, 0, 0.25);
-            --border-radius: 28px;
-            --border-radius-sm: 18px;
-            --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            --gradient-secondary: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-dark) 100%);
-            --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--accent-light) 100%);
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Manrope', sans-serif;
-            background-color: var(--primary);
-            color: var(--light);
-            line-height: 1.7;
-            overflow-x: hidden;
-            font-weight: 400;
-            background: radial-gradient(ellipse at 50% 0%, var(--primary-light) 0%, var(--primary) 70%);
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Inter', sans-serif;
-            font-weight: 800;
-            line-height: 1.1;
-            letter-spacing: -0.02em;
-        }
-        
-        .playfair {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-        }
-        
-        .gradient-text {
-            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        /* Advanced Header with Glass Morphism */
-        header {
-            background: rgba(10, 11, 30, 0.7);
-            backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            padding: 1.5rem 0;
-            transition: var(--transition);
-        }
-        
-        header.scrolled {
-            padding: 1rem 0;
-            background: rgba(10, 11, 30, 0.95);
-            border-bottom: 1px solid rgba(255, 215, 0, 0.1);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-        }
-        
-        .container {
-            width: 92%;
-            max-width: 1600px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            font-size: 2.4rem;
-            font-weight: 900;
-            text-decoration: none;
-            letter-spacing: -0.5px;
-            position: relative;
-        }
-        
-        .logo-icon {
-            position: relative;
-            width: 50px;
-            height: 50px;
-            background: var(--gradient-secondary);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--primary);
-            font-size: 1.8rem;
-            transform: rotate(15deg);
-            animation: logoFloat 6s ease-in-out infinite;
-        }
-        
-        @keyframes logoFloat {
-            0%, 100% { transform: rotate(15deg) translateY(0); }
-            50% { transform: rotate(15deg) translateY(-10px); }
-        }
-        
-        .logo-icon::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: var(--gradient-secondary);
-            border-radius: 14px;
-            z-index: -1;
-            filter: blur(8px);
-            opacity: 0.6;
-        }
-        
-        .logo-text {
-            background: linear-gradient(135deg, #fff 0%, var(--secondary) 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            position: relative;
-        }
-        
-        .logo-text::after {
-            content: '®';
-            position: absolute;
-            top: -8px;
-            right: -20px;
-            font-size: 0.8rem;
-            color: var(--secondary);
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 3.5rem;
-            list-style: none;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: rgba(255, 255, 255, 0.8);
-            font-weight: 600;
-            font-size: 1.05rem;
-            transition: var(--transition);
-            position: relative;
-            padding: 0.5rem 0;
-            letter-spacing: 0.5px;
-        }
-        
-        .nav-links a:hover {
-            color: var(--secondary);
-        }
-        
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient-secondary);
-            transition: width 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-            border-radius: 2px;
-        }
-        
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-        
-        .nav-cta {
-            background: var(--gradient-secondary);
-            color: var(--primary);
-            padding: 1.1rem 2.8rem;
-            border-radius: 50px;
-            font-weight: 800;
-            text-decoration: none;
-            transition: var(--transition);
-            border: none;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            letter-spacing: 0.5px;
-            position: relative;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
-        }
-        
-        .nav-cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.8s ease;
-        }
-        
-        .nav-cta:hover::before {
-            left: 100%;
-        }
-        
-        .nav-cta:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.3);
-        }
-        
-        /* Ultra Premium Hero Section */
-        .hero {
-            padding: 18rem 0 12rem;
-            position: relative;
-            overflow: hidden;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-        }
-        
-        .hero-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            overflow: hidden;
-        }
-        
-        .hero-gradient {
-            position: absolute;
-            width: 1200px;
-            height: 1200px;
-            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
-            border-radius: 50%;
-            top: -600px;
-            right: -600px;
-            animation: gradientFloat 20s ease-in-out infinite;
-        }
-        
-        @keyframes gradientFloat {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(-50px, 50px) scale(1.05); }
-            66% { transform: translate(50px, -50px) scale(0.95); }
-        }
-        
-        .hero-grid {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(rgba(255, 215, 0, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 215, 0, 0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
-            mask-image: radial-gradient(circle at center, black 30%, transparent 70%);
-        }
-        
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            gap: 8rem;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .hero-text h1 {
-            font-size: 5.5rem;
-            margin-bottom: 2.5rem;
-            letter-spacing: -0.03em;
-            line-height: 1.05;
-        }
-        
-        .hero-text .playfair {
-            font-size: 6rem;
-            display: block;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, var(--secondary) 0%, #fff 100%);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .hero-subtitle {
-            font-size: 1.4rem;
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 3.5rem;
-            max-width: 600px;
-            font-weight: 400;
-            line-height: 1.8;
-        }
-        
-        .hero-btns {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        
-        .btn {
-            padding: 1.5rem 3.5rem;
-            border-radius: 50px;
-            font-weight: 800;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            transition: var(--transition);
-            border: none;
-            cursor: pointer;
-            font-size: 1.1rem;
-            letter-spacing: 0.5px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: left 0.8s ease;
-        }
-        
-        .btn:hover::before {
-            left: 100%;
-        }
-        
-        .btn-primary {
-            background: var(--gradient-secondary);
-            color: var(--primary);
-            box-shadow: 0 15px 50px rgba(255, 215, 0, 0.25);
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-8px) scale(1.05);
-            box-shadow: 0 25px 70px rgba(255, 215, 0, 0.35);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            color: var(--light);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-        }
-        
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.05);
-            transform: translateY(-8px);
-            border-color: var(--secondary);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-        }
-        
-        .hero-stats {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 6rem;
-            padding-top: 4rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        
-        .stat-item {
-            text-align: center;
-            position: relative;
-        }
-        
-        .stat-item::before {
-            content: '';
-            position: absolute;
-            top: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 40px;
-            height: 2px;
-            background: var(--gradient-secondary);
-            border-radius: 2px;
-        }
-        
-        .stat-number {
-            font-size: 4.5rem;
-            font-weight: 900;
-            display: block;
-            line-height: 1;
-            margin-bottom: 1rem;
-            background: var(--gradient-secondary);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .stat-label {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 1.1rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-        
-        /* Advanced 3D Hero Visual */
-        .hero-visual {
-            position: relative;
-            perspective: 2000px;
-        }
-        
-        .floating-cube {
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) rotateX(20deg) rotateY(-20deg);
-            transform-style: preserve-3d;
-            animation: cubeFloat 20s ease-in-out infinite;
-            z-index: 1;
-        }
-        
-        @keyframes cubeFloat {
-            0%, 100% { transform: translate(-50%, -50%) rotateX(20deg) rotateY(-20deg) translateZ(0); }
-            33% { transform: translate(-50%, -50%) rotateX(40deg) rotateY(10deg) translateZ(50px); }
-            66% { transform: translate(-50%, -50%) rotateX(10deg) rotateY(-40deg) translateZ(-50px); }
-        }
-        
-        .cube-face {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 215, 0, 0.03);
-            border: 1px solid rgba(255, 215, 0, 0.1);
-            backdrop-filter: blur(10px);
-        }
-        
-        .face-front { transform: translateZ(200px); }
-        .face-back { transform: translateZ(-200px) rotateY(180deg); }
-        .face-right { transform: translateX(200px) rotateY(90deg); }
-        .face-left { transform: translateX(-200px) rotateY(-90deg); }
-        .face-top { transform: translateY(-200px) rotateX(90deg); }
-        .face-bottom { transform: translateY(200px) rotateX(-90deg); }
-        
-        .hero-image-container {
-            position: relative;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            transform: perspective(2000px) rotateY(-15deg) rotateX(10deg);
-            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: 
-                var(--shadow-lg),
-                inset 0 0 100px rgba(255, 215, 0, 0.05);
-            z-index: 2;
-        }
-        
-        .hero-image-container:hover {
-            transform: perspective(2000px) rotateY(0deg) rotateX(0deg);
-        }
-        
-        .hero-image-container img {
-            width: 100%;
-            height: auto;
-            display: block;
-            filter: contrast(1.1) brightness(1.1);
-        }
-        
-        /* Advanced Section Styling */
-        .section-header {
-            text-align: center;
-            margin-bottom: 8rem;
-            position: relative;
-        }
-        
-        .section-label {
-            display: inline-block;
-            background: rgba(255, 215, 0, 0.1);
-            color: var(--secondary);
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 2rem;
-            border: 1px solid rgba(255, 215, 0, 0.2);
-            backdrop-filter: blur(10px);
-        }
-        
-        .section-title {
-            font-size: 4.5rem;
-            margin-bottom: 2rem;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title .playfair {
-            font-size: 5rem;
-            display: block;
-        }
-        
-        .section-subtitle {
-            font-size: 1.4rem;
-            color: rgba(255, 255, 255, 0.7);
-            max-width: 800px;
-            margin: 0 auto;
-            font-weight: 400;
-            line-height: 1.8;
-        }
-        
-        /* Advanced Services Grid */
-        .services {
-            padding: 12rem 0;
-            position: relative;
-        }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 4rem;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .service-card {
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: var(--border-radius);
-            padding: 4.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(20px);
-        }
-        
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--gradient-secondary);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-        
-        .service-card:hover::before {
-            transform: scaleX(1);
-        }
-        
-        .service-card:hover {
-            transform: translateY(-20px);
-            background: rgba(255, 255, 255, 0.04);
-            border-color: rgba(255, 215, 0, 0.1);
-            box-shadow: 
-                var(--shadow),
-                inset 0 0 100px rgba(255, 215, 0, 0.05);
-        }
-        
-        .service-icon {
-            width: 120px;
-            height: 120px;
-            background: rgba(255, 215, 0, 0.05);
-            border-radius: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 3rem;
-            position: relative;
-            transform-style: preserve-3d;
-            transition: var(--transition);
-        }
-        
-        .service-icon::before {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
-            background: var(--gradient-secondary);
-            border-radius: 35px;
-            z-index: -1;
-            filter: blur(20px);
-            opacity: 0;
-            transition: var(--transition);
-        }
-        
-        .service-card:hover .service-icon::before {
-            opacity: 0.3;
-        }
-        
-        .service-card:hover .service-icon {
-            transform: translateZ(30px) scale(1.1) rotate(5deg);
-            background: rgba(255, 215, 0, 0.1);
-        }
-        
-        .service-icon i {
-            font-size: 3.5rem;
-            background: var(--gradient-secondary);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .service-card h3 {
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .service-card h3::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 40px;
-            height: 3px;
-            background: var(--gradient-secondary);
-            border-radius: 3px;
-        }
-        
-        .service-card p {
-            color: rgba(255, 255, 255, 0.6);
-            margin-bottom: 2.5rem;
-            line-height: 1.8;
-            font-size: 1.1rem;
-        }
-        
-        .service-features {
-            list-style: none;
-            margin-top: 2rem;
-        }
-        
-        .service-features li {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-bottom: 1.2rem;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 1.05rem;
-        }
-        
-        .service-features li i {
-            color: var(--secondary);
-            font-size: 1.2rem;
-            width: 25px;
-        }
-        
-        /* Advanced AI Section */
-        .ai-section {
-            padding: 12rem 0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .ai-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 8rem;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .ai-content {
-            position: relative;
-        }
-        
-        .ai-content h3 {
-            font-size: 3.5rem;
-            margin-bottom: 2rem;
-            line-height: 1.1;
-        }
-        
-        .ai-content .playfair {
-            font-size: 4rem;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-        
-        .ai-content p {
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 3rem;
-            font-size: 1.2rem;
-            line-height: 1.8;
-        }
-        
-        .ai-features-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin-top: 3rem;
-        }
-        
-        .ai-feature {
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: var(--border-radius-sm);
-            padding: 2.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: var(--transition);
-        }
-        
-        .ai-feature:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.04);
-            border-color: rgba(124, 58, 237, 0.2);
-        }
-        
-        .ai-feature-icon {
-            width: 70px;
-            height: 70px;
-            background: rgba(124, 58, 237, 0.1);
-            border-radius: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1.5rem;
-            color: var(--accent);
-            font-size: 2rem;
-        }
-        
-        .ai-feature h4 {
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-        }
-        
-        .ai-feature p {
-            color: rgba(255, 255, 255, 0.6);
-            margin-bottom: 0;
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-        
-        .ai-visual {
-            position: relative;
-            perspective: 2000px;
-        }
-        
-        .ai-neural-network {
-            position: relative;
-            width: 100%;
-            height: 600px;
-        }
-        
-        .neural-node {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background: var(--gradient-accent);
-            border-radius: 50%;
-            filter: blur(5px);
-            animation: neuralPulse 3s ease-in-out infinite;
-        }
-        
-        @keyframes neuralPulse {
-            0%, 100% { transform: scale(1); opacity: 0.8; }
-            50% { transform: scale(1.5); opacity: 1; }
-        }
-        
-        .neural-connection {
-            position: absolute;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--accent), transparent);
-            transform-origin: left;
-            animation: connectionFlow 4s linear infinite;
-        }
-        
-        @keyframes connectionFlow {
-            0% { transform: scaleX(0); opacity: 0; }
-            50% { transform: scaleX(1); opacity: 1; }
-            100% { transform: scaleX(0); opacity: 0; }
-        }
-        
-        /* Advanced Tech Stack Carousel */
-        .tech-section {
-            padding: 12rem 0;
-            position: relative;
-        }
-        
-        .tech-carousel-container {
-            position: relative;
-            max-width: 1400px;
-            margin: 0 auto;
-            overflow: hidden;
-        }
-        
-        .tech-carousel-track {
-            display: flex;
-            gap: 3rem;
-            padding: 4rem 0;
-            animation: scrollTech 40s linear infinite;
-        }
-        
-        @keyframes scrollTech {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(calc(-250px * 8 - 3rem * 7)); }
-        }
-        
-        .tech-item {
-            flex: 0 0 250px;
-            height: 300px;
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: var(--border-radius);
-            padding: 3rem;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            transition: var(--transition);
-            backdrop-filter: blur(20px);
-        }
-        
-        .tech-item:hover {
-            transform: translateY(-20px) scale(1.05);
-            background: rgba(255, 255, 255, 0.04);
-            border-color: rgba(255, 215, 0, 0.2);
-            box-shadow: var(--shadow);
-        }
-        
-        .tech-icon {
-            font-size: 4.5rem;
-            margin-bottom: 2rem;
-            background: var(--gradient-secondary);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .tech-item h4 {
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
-        }
-        
-        .tech-item p {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-        
-        /* Advanced Image Gallery */
-        .gallery-section {
-            padding: 12rem 0;
-            position: relative;
-        }
-        
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 3rem;
-            margin-top: 4rem;
-        }
-        
-        .gallery-item {
-            position: relative;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            height: 500px;
-            transition: var(--transition);
-        }
-        
-        .gallery-item:hover {
-            transform: translateY(-20px);
-        }
-        
-        .gallery-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        
-        .gallery-item:hover .gallery-image {
-            transform: scale(1.1);
-        }
-        
-        .gallery-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(10, 11, 30, 0.95), transparent);
-            padding: 4rem;
-            transform: translateY(20px);
-            opacity: 0;
-            transition: var(--transition);
-        }
-        
-        .gallery-item:hover .gallery-overlay {
-            transform: translateY(0);
-            opacity: 1;
-        }
-        
-        .gallery-overlay h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-        
-        .gallery-overlay p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 1.1rem;
-        }
-        
-        /* Advanced DevOps Section */
-        .devops-section {
-            padding: 12rem 0;
-            position: relative;
-        }
-        
-        .devops-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 4rem;
-            margin-top: 4rem;
-        }
-        
-        .devops-card {
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: var(--border-radius);
-            padding: 4rem;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .devops-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 30% 30%, rgba(0, 255, 157, 0.05) 0%, transparent 70%);
-            opacity: 0;
-            transition: var(--transition);
-        }
-        
-        .devops-card:hover::before {
-            opacity: 1;
-        }
-        
-        .devops-card:hover {
-            transform: translateY(-20px);
-            background: rgba(255, 255, 255, 0.04);
-            border-color: rgba(0, 255, 157, 0.2);
-            box-shadow: var(--shadow);
-        }
-        
-        .devops-icon {
-            width: 100px;
-            height: 100px;
-            background: rgba(0, 255, 157, 0.1);
-            border-radius: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 2.5rem;
-            color: var(--success);
-            font-size: 3rem;
-            transition: var(--transition);
-        }
-        
-        .devops-card:hover .devops-icon {
-            transform: rotate(15deg) scale(1.1);
-            background: rgba(0, 255, 157, 0.2);
-        }
-        
-        .devops-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .devops-card p {
-            color: rgba(255, 255, 255, 0.6);
-            line-height: 1.8;
-            font-size: 1.1rem;
-        }
-        
-        /* Advanced Contact Section */
-        .contact-section {
-            padding: 12rem 0;
-            position: relative;
-        }
-        
-        .contact-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 8rem;
-            align-items: start;
-        }
-        
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 3rem;
-        }
-        
-        .contact-card {
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: var(--border-radius);
-            padding: 3.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: var(--transition);
-        }
-        
-        .contact-card:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.04);
-            border-color: rgba(255, 215, 0, 0.2);
-        }
-        
-        .contact-icon {
-            width: 100px;
-            height: 100px;
-            background: rgba(255, 215, 0, 0.1);
-            border-radius: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 2rem;
-            color: var(--secondary);
-            font-size: 2.5rem;
-        }
-        
-        .contact-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .contact-details {
-            list-style: none;
-        }
-        
-        .contact-details li {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            margin-bottom: 1.2rem;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 1.1rem;
-        }
-        
-        .contact-details li i {
-            color: var(--secondary);
-            margin-top: 3px;
-            width: 20px;
-        }
-        
-        .contact-details li a {
-            color: var(--light);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-        
-        .contact-details li a:hover {
-            color: var(--secondary);
-        }
-        
-        .contact-form-container {
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: var(--border-radius);
-            padding: 5rem;
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-        }
-        
-        .contact-form h3 {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-        }
-        
-        .form-group {
-            margin-bottom: 2.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 1rem;
-            color: rgba(255, 255, 255, 0.8);
-            font-weight: 600;
-            font-size: 1.1rem;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 1.5rem 2rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: var(--border-radius-sm);
-            font-family: 'Manrope', sans-serif;
-            font-size: 1.1rem;
-            color: var(--light);
-            transition: var(--transition);
-        }
-        
-        .form-control:focus {
-            outline: none;
-            background: rgba(255, 255, 255, 0.08);
-            border-color: var(--secondary);
-            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
-        }
-        
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2.5rem;
-        }
-        
-        textarea.form-control {
-            min-height: 200px;
-            resize: vertical;
-        }
-        
-        /* Advanced Footer */
-        footer {
-            background: rgba(10, 11, 30, 0.95);
-            padding: 8rem 0 3rem;
-            position: relative;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1.5fr repeat(3, 1fr);
-            gap: 6rem;
-            margin-bottom: 6rem;
-        }
-        
-        .footer-col h3 {
-            font-size: 1.4rem;
-            margin-bottom: 2.5rem;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .footer-col h3::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 40px;
-            height: 3px;
-            background: var(--gradient-secondary);
-            border-radius: 3px;
-        }
-        
-        .footer-col p {
-            color: rgba(255, 255, 255, 0.6);
-            margin-bottom: 2.5rem;
-            line-height: 1.8;
-            font-size: 1.1rem;
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 1.5rem;
-        }
-        
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.6);
-            text-decoration: none;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            font-size: 1.1rem;
-        }
-        
-        .footer-links a:hover {
-            color: var(--secondary);
-            transform: translateX(5px);
-        }
-        
-        .footer-links a i {
-            color: var(--secondary);
-            font-size: 0.9rem;
-            width: 20px;
-        }
-        
-        .social-links {
-            display: flex;
-            gap: 1.5rem;
-            margin-top: 2.5rem;
-        }
-        
-        .social-links a {
-            width: 60px;
-            height: 60px;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--light);
-            text-decoration: none;
-            transition: var(--transition);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .social-links a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-secondary);
-            transition: left 0.6s ease;
-        }
-        
-        .social-links a:hover::before {
-            left: 0;
-        }
-        
-        .social-links a i {
-            position: relative;
-            z-index: 1;
-        }
-        
-        .social-links a:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(255, 215, 0, 0.2);
-        }
-        
-        .newsletter {
-            margin-top: 2rem;
-        }
-        
-        .newsletter p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-        }
-        
-        .newsletter-form {
-            display: flex;
-            gap: 1rem;
-        }
-        
-        .newsletter-input {
-            flex: 1;
-            padding: 1.2rem 2rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 50px;
-            color: var(--light);
-            font-family: 'Manrope', sans-serif;
-            font-size: 1.1rem;
-        }
-        
-        .newsletter-input::placeholder {
-            color: rgba(255, 255, 255, 0.3);
-        }
-        
-        .newsletter-btn {
-            padding: 1.2rem 2.5rem;
-            background: var(--gradient-secondary);
-            color: var(--primary);
-            border: none;
-            border-radius: 50px;
-            font-weight: 800;
-            cursor: pointer;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .newsletter-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
-        }
-        
-        .footer-bottom {
-            text-align: center;
-            padding-top: 4rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            color: rgba(255, 255, 255, 0.4);
-            font-size: 1.1rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        
-        .footer-bottom-links {
-            display: flex;
-            gap: 2.5rem;
-        }
-        
-        .footer-bottom-links a {
-            color: rgba(255, 255, 255, 0.4);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-        
-        .footer-bottom-links a:hover {
-            color: var(--secondary);
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 1600px) {
-            .hero-text h1 {
-                font-size: 4.5rem;
-            }
-            
-            .section-title {
-                font-size: 3.5rem;
-            }
-        }
-        
-        @media (max-width: 1200px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                gap: 6rem;
-            }
-            
-            .ai-container {
-                grid-template-columns: 1fr;
-                gap: 6rem;
-            }
-            
-            .contact-container {
-                grid-template-columns: 1fr;
-                gap: 6rem;
-            }
-            
-            .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 4rem;
-            }
-            
-            .floating-cube {
-                width: 300px;
-                height: 300px;
-            }
-        }
-        
-        @media (max-width: 992px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .mobile-menu-btn {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                background: none;
-                border: none;
-                color: var(--light);
-                font-size: 1.8rem;
-                cursor: pointer;
-                width: 60px;
-                height: 60px;
-                border-radius: 18px;
-                background: rgba(255, 255, 255, 0.05);
-            }
-            
-            .hero-text h1 {
-                font-size: 3.5rem;
-            }
-            
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-            
-            .footer-bottom {
-                flex-direction: column;
-                gap: 2rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .hero {
-                padding: 15rem 0 8rem;
-            }
-            
-            .hero-text h1 {
-                font-size: 2.8rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .section-title {
-                font-size: 2.8rem;
-            }
-            
-            .section-subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .btn {
-                padding: 1.2rem 2.5rem;
-                font-size: 1rem;
-            }
-            
-            .service-card, .contact-form-container, .contact-card {
-                padding: 3rem;
-            }
-            
-            .newsletter-form {
-                flex-direction: column;
-            }
-        }
-        
-        /* Animation Classes */
-        .reveal {
-            opacity: 0;
-            transform: translateY(60px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
-                        transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        
-        .reveal.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 40px;
-            right: 40px;
-            width: 70px;
-            height: 70px;
-            background: var(--gradient-secondary);
-            color: var(--primary);
-            border-radius: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            text-decoration: none;
-            box-shadow: 0 15px 50px rgba(255, 215, 0, 0.3);
-            transition: var(--transition);
-            z-index: 999;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(20px);
-        }
-        
-        .back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-        
-        .back-to-top:hover {
-            transform: translateY(-10px) scale(1.1);
-            box-shadow: 0 25px 70px rgba(255, 215, 0, 0.4);
-        }
-        
-        /* Particle Background */
-        .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 0;
-        }
-        
-        .particle {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: var(--secondary);
-            border-radius: 50%;
-            animation: particleFloat 20s linear infinite;
-        }
-        
-        @keyframes particleFloat {
-            0% {
-                transform: translateY(100vh) translateX(0) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 1;
-            }
-            90% {
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-100px) translateX(100px) rotate(360deg);
-                opacity: 0;
-            }
-        }
-        
-        /* Mobile Menu */
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.8rem;
-            color: var(--light);
-            cursor: pointer;
-            width: 60px;
-            height: 60px;
-            border-radius: 18px;
-            background: rgba(255, 255, 255, 0.05);
-            transition: var(--transition);
-        }
-        
-        .mobile-menu-btn:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-        
-        @media (max-width: 992px) {
-            .mobile-menu-btn {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-            }
-        }
-    </style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+Happy Homestay Perinthalmanna | Best Luxury Homestay in Malappuram Kerala
+</title>
+
+<meta name="description"
+content="Happy Homestay Perinthalmanna is one of the best luxury homestays in Malappuram Kerala offering premium rooms, family-friendly accommodation, tourist stay, workcation stay, holiday rental, free WiFi, parking, peaceful atmosphere, and authentic Kerala hospitality.">
+
+<meta name="keywords"
+content="Best Homestay in Malappuram, Luxury Homestay Perinthalmanna, Premium Stay Kerala, Budget Homestay Kerala, Family Stay Malappuram, Tourist Accommodation Kerala, Holiday Home Malappuram, Airbnb Perinthalmanna, Workcation Kerala, Couple Friendly Stay Kerala, Kerala Tourism Homestay, Best Guest House in Malappuram, Vacation Stay Kerala, Luxury Rooms Perinthalmanna, Weekend Getaway Kerala, Affordable Stay Kerala, Kerala Holiday Rental, Family Vacation Kerala, Best Stay Near Perinthalmanna, Nature Stay Kerala, Best Rooms in Malappuram, Luxury Vacation Kerala, Homestay with Parking Kerala, Homestay with WiFi Kerala, Safe Family Stay Kerala, Business Stay Perinthalmanna, Best Accommodation Kerala">
+
+<meta name="robots" content="index, follow">
+
+<meta property="og:title"
+content="Happy Homestay Perinthalmanna | Best Luxury Family Stay in Kerala">
+
+<meta property="og:description"
+content="Luxury and peaceful homestay in Perinthalmanna with premium rooms, free WiFi, parking, Kerala hospitality, and affordable pricing.">
+
+<meta property="og:type" content="website">
+
+<meta property="og:image"
+content="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1200&auto=format&fit=crop">
+
+<meta property="og:locale" content="en_IN">
+
+<link rel="canonical" href="https://yourwebsite.com">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Segoe UI',sans-serif;
+background:#f8fafc;
+color:#1e293b;
+line-height:1.8;
+overflow-x:hidden;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(0,0,0,0.55),rgba(0,0,0,0.55)),
+url('https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1600&auto=format&fit=crop');
+
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:20px;
+color:white;
+}
+
+.hero-content{
+max-width:1000px;
+animation:fadeIn 1.2s ease;
+}
+
+.hero h1{
+font-size:72px;
+font-weight:700;
+margin-bottom:20px;
+text-shadow:0 8px 20px rgba(0,0,0,0.4);
+}
+
+.hero p{
+font-size:26px;
+margin-bottom:35px;
+line-height:1.8;
+}
+
+.btn{
+display:inline-block;
+padding:16px 38px;
+background:#0f766e;
+color:white;
+text-decoration:none;
+border-radius:50px;
+font-size:18px;
+transition:0.4s;
+box-shadow:0 10px 30px rgba(15,118,110,0.3);
+}
+
+.btn:hover{
+background:#115e59;
+transform:translateY(-4px);
+}
+
+/* GENERAL */
+
+section{
+padding:100px 20px;
+}
+
+.container{
+max-width:1300px;
+margin:auto;
+}
+
+.section-title{
+text-align:center;
+margin-bottom:60px;
+}
+
+.section-title h2{
+font-size:48px;
+color:#0f766e;
+margin-bottom:18px;
+}
+
+.section-title p{
+font-size:20px;
+color:#475569;
+max-width:850px;
+margin:auto;
+}
+
+/* FEATURES */
+
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.feature-box{
+background:white;
+padding:40px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+transition:0.4s;
+}
+
+.feature-box:hover{
+transform:translateY(-8px);
+}
+
+.feature-box h3{
+font-size:28px;
+color:#0f766e;
+margin-bottom:18px;
+}
+
+.feature-box p{
+font-size:17px;
+color:#475569;
+}
+
+/* ABOUT */
+
+.about{
+background:#ecfeff;
+}
+
+.about-content{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+}
+
+.about img{
+width:100%;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.1);
+}
+
+.about-text h2{
+font-size:46px;
+color:#0f766e;
+margin-bottom:25px;
+}
+
+.about-text p{
+font-size:18px;
+margin-bottom:22px;
+color:#334155;
+}
+
+/* GALLERY */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:20px;
+}
+
+.gallery img{
+width:100%;
+height:280px;
+object-fit:cover;
+border-radius:20px;
+transition:0.4s;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.gallery img:hover{
+transform:scale(1.03);
+}
+
+/* REVIEW */
+
+.reviews{
+background:#f1f5f9;
+}
+
+.review-card{
+background:white;
+padding:45px;
+border-radius:20px;
+max-width:950px;
+margin:auto;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+text-align:center;
+}
+
+.review-card p{
+font-size:21px;
+line-height:2;
+color:#334155;
+}
+
+.review-card strong{
+display:block;
+margin-top:25px;
+font-size:18px;
+color:#0f766e;
+}
+
+/* FAQ */
+
+.faq{
+background:white;
+}
+
+.faq-item{
+background:#f8fafc;
+padding:30px;
+margin-bottom:20px;
+border-radius:16px;
+box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.faq-item h3{
+color:#0f766e;
+margin-bottom:15px;
+font-size:24px;
+}
+
+/* CONTACT */
+
+.contact{
+background:
+linear-gradient(rgba(2,6,23,0.9),rgba(2,6,23,0.9)),
+url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1600&auto=format&fit=crop');
+
+background-size:cover;
+background-position:center;
+color:white;
+text-align:center;
+}
+
+.contact h2{
+font-size:52px;
+margin-bottom:25px;
+}
+
+.contact p{
+font-size:22px;
+margin:18px 0;
+line-height:1.9;
+}
+
+/* FOOTER */
+
+footer{
+background:#020617;
+color:#cbd5e1;
+padding:35px 20px;
+text-align:center;
+font-size:15px;
+}
+
+/* ANIMATION */
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(20px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.hero h1{
+font-size:48px;
+}
+
+.hero p{
+font-size:20px;
+}
+
+.about-content{
+grid-template-columns:1fr;
+}
+
+.section-title h2{
+font-size:38px;
+}
+
+.contact h2{
+font-size:38px;
+}
+
+.contact p{
+font-size:18px;
+}
+
+}
+
+</style>
+
 </head>
+
 <body>
-    <!-- Particles Background -->
-    <div class="particles" id="particles"></div>
 
-    <!-- Advanced Header -->
-    <header id="header">
-        <div class="container">
-            <div class="nav-container">
-                <a href="#" class="logo">
-                    <div class="logo-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <span class="logo-text">CodexWagon</span>
-                </a>
-                
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
-                    <i class="fas fa-bars"></i>
-                </button>
-                
-                <ul class="nav-links" id="navLinks">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#ai">AI Solutions</a></li>
-                    <li><a href="#tech">Tech Stack</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#devops">DevOps</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                
-                <a href="tel:9961959788" class="nav-cta">
-                    <i class="fas fa-phone"></i>
-                    9961959788
-                </a>
-            </div>
-        </div>
-    </header>
+<!-- HERO -->
 
-    <!-- Ultra Premium Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-bg">
-            <div class="hero-gradient"></div>
-            <div class="hero-grid"></div>
-        </div>
-        
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-text reveal">
-                    <h1>
-                        <span class="playfair">Digital Excellence</span>
-                        Redefined for Visionary<br>Enterprises
-                    </h1>
-                    <p class="hero-subtitle">
-                        CodexWagon delivers premium digital transformation services using cutting-edge technologies. 
-                        We architect scalable solutions that drive measurable business outcomes for global enterprises.
-                    </p>
-                    <div class="hero-btns">
-                        <a href="#contact" class="btn btn-primary">
-                            <i class="fas fa-rocket"></i>
-                            Start Transformation
-                        </a>
-                        <a href="#services" class="btn btn-secondary">
-                            <i class="fas fa-eye"></i>
-                            View Services
-                        </a>
-                    </div>
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <span class="stat-number">500+</span>
-                            <span class="stat-label">Enterprise Clients</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">99%</span>
-                            <span class="stat-label">Client Retention</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">15+</span>
-                            <span class="stat-label">Years Experience</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">24/7</span>
-                            <span class="stat-label">Global Support</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="hero-visual reveal">
-                    <div class="floating-cube">
-                        <div class="cube-face face-front"></div>
-                        <div class="cube-face face-back"></div>
-                        <div class="cube-face face-right"></div>
-                        <div class="cube-face face-left"></div>
-                        <div class="cube-face face-top"></div>
-                        <div class="cube-face face-bottom"></div>
-                    </div>
-                    
-                    <div class="hero-image-container">
-                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Digital Transformation">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<header class="hero">
 
-    <!-- Advanced Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Premium Services</span>
-                <h2 class="section-title">
-                    <span class="playfair">Enterprise Solutions</span>
-                    That Transform Businesses
-                </h2>
-                <p class="section-subtitle">
-                    Comprehensive digital services designed for enterprise-scale businesses seeking 
-                    transformative technology solutions and measurable ROI.
-                </p>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3>Enterprise Web Development</h3>
-                    <p>
-                        Scalable, secure web applications built with cutting-edge technologies, 
-                        designed for high-performance and seamless user experiences.
-                    </p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> React, Angular, Vue.js</li>
-                        <li><i class="fas fa-check"></i> Microservices Architecture</li>
-                        <li><i class="fas fa-check"></i> Real-time Applications</li>
-                        <li><i class="fas fa-check"></i> Performance Optimization</li>
-                    </ul>
-                </div>
-                
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>Mobile App Development</h3>
-                    <p>
-                        Native and cross-platform mobile applications engineered for performance, 
-                        intuitive UX, and seamless enterprise integration.
-                    </p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> iOS Swift & Android Kotlin</li>
-                        <li><i class="fas fa-check"></i> React Native & Flutter</li>
-                        <li><i class="fas fa-check"></i> AR/VR Integration</li>
-                        <li><i class="fas fa-check"></i> App Store Optimization</li>
-                    </ul>
-                </div>
-                
-                <div class="service-card reveal">
-                    <div class="service-icon">
-                        <i class="fas fa-cloud"></i>
-                    </div>
-                    <h3>Cloud Solutions</h3>
-                    <p>
-                        Comprehensive cloud strategy, migration, and management services 
-                        across AWS, Azure, and Google Cloud platforms.
-                    </p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check"></i> Multi-cloud Strategy</li>
-                        <li><i class="fas fa-check"></i> Kubernetes & Docker</li>
-                        <li><i class="fas fa-check"></i> Serverless Architecture</li>
-                        <li><i class="fas fa-check"></i> Cost Optimization</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="hero-content">
 
-    <!-- Advanced AI Section -->
-    <section class="ai-section" id="ai">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Artificial Intelligence</span>
-                <h2 class="section-title">
-                    <span class="playfair">Advanced AI & ML</span>
-                    Solutions
-                </h2>
-                <p class="section-subtitle">
-                    Harness the power of artificial intelligence and machine learning 
-                    to transform your business operations.
-                </p>
-            </div>
-            
-            <div class="ai-container">
-                <div class="ai-content reveal">
-                    <h3>
-                        <span class="playfair">Transformative</span>
-                        Machine Learning Solutions
-                    </h3>
-                    <p>
-                        Our AI specialists develop custom machine learning models, neural networks, 
-                        and deep learning solutions that solve complex business challenges and 
-                        unlock new opportunities.
-                    </p>
-                    
-                    <div class="ai-features-grid">
-                        <div class="ai-feature">
-                            <div class="ai-feature-icon">
-                                <i class="fas fa-brain"></i>
-                            </div>
-                            <h4>Neural Networks</h4>
-                            <p>Custom neural architectures for image recognition and predictive modeling.</p>
-                        </div>
-                        
-                        <div class="ai-feature">
-                            <div class="ai-feature-icon">
-                                <i class="fas fa-comments"></i>
-                            </div>
-                            <h4>Natural Language</h4>
-                            <p>Advanced NLP solutions including sentiment analysis and chatbots.</p>
-                        </div>
-                        
-                        <div class="ai-feature">
-                            <div class="ai-feature-icon">
-                                <i class="fas fa-eye"></i>
-                            </div>
-                            <h4>Computer Vision</h4>
-                            <p>Object detection, facial recognition, and image classification.</p>
-                        </div>
-                        
-                        <div class="ai-feature">
-                            <div class="ai-feature-icon">
-                                <i class="fas fa-chart-line"></i>
-                            </div>
-                            <h4>Predictive Analytics</h4>
-                            <p>Custom ML models for business intelligence and forecasting.</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="ai-visual reveal">
-                    <div class="ai-neural-network" id="neuralNetwork"></div>
-                </div>
-            </div>
-        </div>
-    </section>
+<h1>
+Happy Homestay Perinthalmanna
+</h1>
 
-    <!-- Advanced Tech Stack Section -->
-    <section class="tech-section" id="tech">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Technology Stack</span>
-                <h2 class="section-title">
-                    <span class="playfair">Cutting-Edge</span>
-                    Technologies
-                </h2>
-                <p class="section-subtitle">
-                    We leverage the latest technologies and frameworks to build robust, 
-                    scalable, and high-performance digital solutions.
-                </p>
-            </div>
-            
-            <div class="tech-carousel-container">
-                <div class="tech-carousel-track">
-                    <div class="tech-item">
-                        <div class="tech-icon">
-                            <i class="fab fa-react"></i>
-                        </div>
-                        <h4>React & Next.js</h4>
-                        <p>Modern frontend development with TypeScript and server-side rendering.</p>
-                    </div>
-                    
-                    <div class="tech-item">
-                        <div class="tech-icon">
-                            <i class="fab fa-node-js"></i>
-                        </div>
-                        <h4>Node.js</h4>
-                        <p>Scalable backend solutions with microservices and GraphQL APIs.</p>
-                    </div>
-                    
-                    <div class="tech-item">
-                        <div class="tech-icon">
-                            <i class="fab fa-python"></i>
-                        </div>
-                        <h4>Python & Django</h4>
-                        <p>Enterprise-grade backend development and data science solutions.</p>
-                    </div>
-                    
-                    <div class="tech-item">
-                        <div class="tech-icon">
-                            <i class="fab fa-aws"></i>
-                        </div>
-                        <h4>AWS Cloud</h4>
-                        <p>Comprehensive cloud infrastructure and serverless architecture.</p>
-                    </div>
-                    
-                    <div class="tech-item">
-                        <div class="tech-icon">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <h4>Databases</h4>
-                        <p>PostgreSQL, MongoDB, Redis, and Elasticsearch solutions.</p>
-                    </div>
-                    
-                    <div class="tech-item">
-                        <div class="tech-icon">
-                            <i class="fab fa-docker"></i>
-                        </div>
-                        <h4>Docker & K8s</h4>
-                        <p>Container orchestration and scalable deployment solutions.</p>
-                    </div>
-                    
-                    <div class="tech-item">
-                        <div class="tech-icon">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                        <h4>AI/ML Tools</h4>
-                        <p>TensorFlow, PyTorch, and custom machine learning models.</p>
-                    </div>
-                    
-                    <div class="tech-item">
-                        <div class="tech-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h4>Security</h4>
-                        <p>Enterprise-grade security solutions and compliance management.</p>
-                    </div>
-                    
-                    <!-- Duplicate items for seamless loop -->
-                    <div class="tech-item">
-                        <div class="tech-icon">
-                            <i class="fab fa-react"></i>
-                        </div>
-                        <h4>React & Next.js</h4>
-                        <p>Modern frontend development with TypeScript and server-side rendering.</p>
-                    </div>
-                    
-                    <div class="tech-item">
-                        <div class="tech-icon">
-                            <i class="fab fa-node-js"></i>
-                        </div>
-                        <h4>Node.js</h4>
-                        <p>Scalable backend solutions with microservices and GraphQL APIs.</p>
-                    </div>
-                    
-                    <div class="tech-item">
-                        <div class="tech-icon">
-                            <i class="fab fa-python"></i>
-                        </div>
-                        <h4>Python & Django</h4>
-                        <p>Enterprise-grade backend development and data science solutions.</p>
-                    </div>
-                    
-                    <div class="tech-item">
-                        <div class="tech-icon">
-                            <i class="fab fa-aws"></i>
-                        </div>
-                        <h4>AWS Cloud</h4>
-                        <p>Comprehensive cloud infrastructure and serverless architecture.</p>
-                    </div>
-                    
-                    <div class="tech-item">
-                        <div class="tech-icon">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <h4>Databases</h4>
-                        <p>PostgreSQL, MongoDB, Redis, and Elasticsearch solutions.</p>
-                    </div>
-                    
-                    <div class="tech-item">
-                        <div class="tech-icon">
-                            <i class="fab fa-docker"></i>
-                        </div>
-                        <h4>Docker & K8s</h4>
-                        <p>Container orchestration and scalable deployment solutions.</p>
-                    </div>
-                    
-                    <div class="tech-item">
-                        <div class="tech-icon">
-                            <i class="fas fa-robot"></i>
-                        </div>
-                        <h4>AI/ML Tools</h4>
-                        <p>TensorFlow, PyTorch, and custom machine learning models.</p>
-                    </div>
-                    
-                    <div class="tech-item">
-                        <div class="tech-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h4>Security</h4>
-                        <p>Enterprise-grade security solutions and compliance management.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<p>
+Experience the Best Luxury Homestay in Malappuram Kerala with
+Premium Rooms, Peaceful Atmosphere, Kerala Hospitality,
+Family-Friendly Stay, Tourist Accommodation,
+Weekend Getaway & Affordable Luxury Vacation
+</p>
 
-    <!-- Advanced Gallery Section -->
-    <section class="gallery-section" id="gallery">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Our Work</span>
-                <h2 class="section-title">
-                    <span class="playfair">Digital</span>
-                    Masterpieces
-                </h2>
-                <p class="section-subtitle">
-                    A showcase of our premium digital solutions that have transformed 
-                    businesses across industries.
-                </p>
-            </div>
-            
-            <div class="gallery-grid">
-                <div class="gallery-item reveal">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Enterprise Dashboard" class="gallery-image">
-                    <div class="gallery-overlay">
-                        <h3>Business Intelligence Platform</h3>
-                        <p>Real-time analytics with AI-powered insights for Fortune 500 clients.</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item reveal">
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Mobile Banking" class="gallery-image">
-                    <div class="gallery-overlay">
-                        <h3>Mobile Banking Application</h3>
-                        <p>Secure banking app with biometric authentication and AI insights.</p>
-                    </div>
-                </div>
-                
-                <div class="gallery-item reveal">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="E-commerce" class="gallery-image">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="E-commerce" class="gallery-image">
-                    <div class="gallery-overlay">
-                        <h3>Premium E-commerce Platform</h3>
-                        <p>Scalable marketplace with AR visualization and AI personalization.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<a href="#contact" class="btn">
+Book Your Stay Now
+</a>
 
-    <!-- Advanced DevOps Section -->
-    <section class="devops-section" id="devops">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">DevOps Excellence</span>
-                <h2 class="section-title">
-                    <span class="playfair">Modern DevOps</span>
-                    & Automation
-                </h2>
-                <p class="section-subtitle">
-                    Streamlined development pipelines, infrastructure as code, 
-                    and automated deployment for rapid, reliable software delivery.
-                </p>
-            </div>
-            
-            <div class="devops-grid">
-                <div class="devops-card reveal">
-                    <div class="devops-icon">
-                        <i class="fas fa-code-branch"></i>
-                    </div>
-                    <h3>CI/CD Pipelines</h3>
-                    <p>
-                        Automated continuous integration and deployment pipelines using 
-                        Jenkins, GitLab CI, and GitHub Actions for rapid, reliable delivery.
-                    </p>
-                </div>
-                
-                <div class="devops-card reveal">
-                    <div class="devops-icon">
-                        <i class="fas fa-server"></i>
-                    </div>
-                    <h3>Infrastructure as Code</h3>
-                    <p>
-                        Automated infrastructure provisioning and management using 
-                        Terraform, Ansible, and CloudFormation for consistent environments.
-                    </p>
-                </div>
-                
-                <div class="devops-card reveal">
-                    <div class="devops-icon">
-                        <i class="fas fa-ship"></i>
-                    </div>
-                    <h3>Container Orchestration</h3>
-                    <p>
-                        Scalable container management with Kubernetes and Docker Swarm 
-                        for efficient deployment and management of applications.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+</div>
 
-    <!-- Advanced Contact Section -->
-    <section class="contact-section" id="contact">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-label">Get In Touch</span>
-                <h2 class="section-title">
-                    <span class="playfair">Start Your</span>
-                    Transformation
-                </h2>
-                <p class="section-subtitle">
-                    Contact our global team to discuss your enterprise web development, 
-                    mobile app, cloud, or AI project requirements.
-                </p>
-            </div>
-            
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-card reveal">
-                        <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
-                        </div>
-                        <h3>Global Contact</h3>
-                        <ul class="contact-details">
-                            <li><i class="fas fa-mobile-alt"></i> <a href="tel:9961959788">9961959788</a></li>
-                            <li><i class="fas fa-headset"></i> <a href="tel:9961959788">9961959788</a></li>
-                            <li><i class="fas fa-clock"></i> 24/7 Enterprise Support</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="contact-card reveal">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <h3>Email Communications</h3>
-                        <ul class="contact-details">
-                            <li><i class="fas fa-user"></i> <a href="mailto:arun@codexwagon.in">arun@codexwagon.in</a></li>
-                            <li><i class="fas fa-building"></i> <a href="mailto:info@codexwagon.in">info@codexwagon.in</a></li>
-                            <li><i class="fas fa-question-circle"></i> <a href="mailto:support@codexwagon.in">support@codexwagon.in</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="contact-card reveal">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <h3>Global Offices</h3>
-                        <ul class="contact-details">
-                            <li><i class="fas fa-location-dot"></i> Bangalore Electronic City</li>
-                            <li><i class="fas fa-location-dot"></i> Dubai Internet City</li>
-                            <li><i class="fas fa-location-dot"></i> Global Remote Teams</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="contact-form-container reveal">
-                    <form id="contactForm" class="contact-form">
-                        <h3>Request Enterprise Consultation</h3>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="name">Full Name *</label>
-                                <input type="text" id="name" class="form-control" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Phone Number *</label>
-                                <input type="tel" id="phone" class="form-control" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email">Business Email *</label>
-                            <input type="email" id="email" class="form-control" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="company">Company Name</label>
-                            <input type="text" id="company" class="form-control">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="service">Primary Interest</label>
-                            <select id="service" class="form-control">
-                                <option value="">Select Service</option>
-                                <option value="web">Enterprise Web Development</option>
-                                <option value="mobile">Mobile App Development</option>
-                                <option value="cloud">Cloud Solutions</option>
-                                <option value="ai">AI & Machine Learning</option>
-                                <option value="devops">DevOps & Automation</option>
-                                <option value="custom">Custom Applications</option>
-                            </select>
-                       
+</header>
+
+<!-- FEATURES -->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+Why Choose Happy Homestay in Perinthalmanna?
+</h2>
+
+<p>
+Happy Homestay is one of the most trusted and highly rated
+homestays in Malappuram offering comfortable rooms,
+modern amenities, peaceful surroundings,
+and authentic Kerala hospitality.
+</p>
+
+</div>
+
+<div class="features">
+
+<div class="feature-box">
+
+<h3>
+Luxury Rooms
+</h3>
+
+<p>
+Enjoy spacious and beautifully designed rooms with
+air conditioning, smart TV, free WiFi,
+comfortable bedding, attached bathrooms,
+and premium interiors for a relaxing stay experience.
+</p>
+
+</div>
+
+<div class="feature-box">
+
+<h3>
+Family Friendly Stay
+</h3>
+
+<p>
+Perfect homestay for families, couples,
+solo travelers, tourists, and business travelers
+looking for a safe and peaceful accommodation in Kerala.
+</p>
+
+</div>
+
+<div class="feature-box">
+
+<h3>
+Affordable Luxury
+</h3>
+
+<p>
+Get premium comfort and luxury stay experience
+at affordable pricing in Perinthalmanna,
+making it ideal for budget-conscious travelers.
+</p>
+
+</div>
+
+<div class="feature-box">
+
+<h3>
+Perfect Tourist Location
+</h3>
+
+<p>
+Located in beautiful Perinthalmanna, Malappuram,
+our homestay provides easy access to hospitals,
+shopping areas, restaurants,
+tourist attractions, and transportation facilities.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT -->
+
+<section class="about">
+
+<div class="container">
+
+<div class="about-content">
+
+<div>
+
+<img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1200&auto=format&fit=crop">
+
+</div>
+
+<div class="about-text">
+
+<h2>
+Best Homestay Experience in Malappuram
+</h2>
+
+<p>
+Happy Homestay Perinthalmanna is designed for guests who
+want a peaceful and luxurious stay experience in Kerala.
+Our property combines modern comfort with traditional Kerala hospitality,
+creating the perfect atmosphere for relaxation and memorable stays.
+</p>
+
+<p>
+Whether you are visiting Malappuram for tourism,
+medical treatment, business meetings,
+family vacation, workcation,
+or weekend relaxation,
+Happy Homestay offers a premium accommodation experience
+with excellent service and affordable pricing.
+</p>
+
+<p>
+Guests love our clean rooms, friendly environment,
+beautiful interiors, peaceful atmosphere,
+and convenient location in Perinthalmanna.
+We focus on providing the best customer satisfaction
+for every traveler visiting Kerala.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- GALLERY -->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+Luxury Stay Gallery
+</h2>
+
+<p>
+Discover elegant interiors, premium rooms,
+and peaceful surroundings at Happy Homestay.
+</p>
+
+</div>
+
+<div class="gallery">
+
+<img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=1200&auto=format&fit=crop">
+
+<img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1200&auto=format&fit=crop">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- REVIEWS -->
+
+<section class="reviews">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+Guest Reviews
+</h2>
+
+<p>
+Trusted by travelers looking for the best luxury homestay in Kerala.
+</p>
+
+</div>
+
+<div class="review-card">
+
+<p>
+“Amazing luxury homestay in Perinthalmanna, Malappuram
+with beautiful interiors, excellent hospitality,
+peaceful surroundings, clean rooms,
+high-speed WiFi, parking facilities,
+and authentic Kerala atmosphere.
+One of the best family-friendly stays in Kerala.
+Highly recommended for tourists and families.”
+</p>
+
+<strong>
+- Happy Guest
+</strong>
+
+<br><br>
+
+<a href="https://g.page/r/"
+target="_blank"
+class="btn">
+Write a Google Review
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- FAQ -->
+
+<section class="faq">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>
+Frequently Asked Questions
+</h2>
+
+<p>
+Everything you need to know about Happy Homestay Perinthalmanna.
+</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3>
+Is Happy Homestay suitable for families?
+</h3>
+
+<p>
+Yes. Happy Homestay is one of the best family-friendly homestays
+in Malappuram with safe surroundings,
+peaceful atmosphere,
+and comfortable rooms for families and children.
+</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3>
+Do you provide WiFi and parking?
+</h3>
+
+<p>
+Yes. We provide free high-speed WiFi,
+private parking,
+comfortable rooms,
+and modern amenities for all guests.
+</p>
+
+</div>
+
+<div class="faq-item">
+
+<h3>
+Is this homestay good for tourists visiting Kerala?
+</h3>
+
+<p>
+Absolutely. Our homestay is ideal for tourists,
+couples, business travelers,
+medical visitors,
+and guests looking for a peaceful Kerala vacation experience.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<div class="container">
+
+<h2>
+Contact Happy Homestay
+</h2>
+
+<p>
+📍 Perinthalmanna, Malappuram, Kerala
+</p>
+
+<p>
+📞 9961959788
+</p>
+
+<p>
+Best Luxury & Budget Homestay in Perinthalmanna
+for Family Vacation, Tourist Stay,
+Weekend Getaway, Couple Stay,
+Workcation & Business Travel
+</p>
+
+<br>
+
+<a href="tel:9961959788" class="btn">
+Call Now
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+© 2026 Happy Homestay Perinthalmanna |
+Best Luxury Homestay in Malappuram Kerala
+
+</footer>
+
+</body>
+</html>
